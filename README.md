@@ -1,3 +1,13 @@
+# Inflearn LLM PPT
+
+인프런 LLM 애플리케이션 과정 발표용 HTML 슬라이드입니다.
+
+## 슬라이드 열기
+
+온라인: https://thurlybirds4.github.io/inflearn-rag-application-streamlit/01.html
+
+---
+
 # Inflearn Streamlit Project
 
 ## Overview

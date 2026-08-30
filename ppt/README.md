@@ -4,16 +4,14 @@
 
 ## 슬라이드 열기
 
-온라인: https://thurlybirds4.github.io/inflearn-rag-application-streamlit/
-
-`slides/01.html`부터 보거나 `index.html`에서 고르면 됩니다.
+온라인: https://thurlybirds4.github.io/inflearn-rag-application-streamlit/01.html
 
 화면 **왼쪽**을 클릭하면 이전, **오른쪽**을 클릭하면 다음 장으로 넘어갑니다.
 
 | 번호 | 내용 |
 |---|---|
 | 01–04 | 로드맵 · RAG 개념 |
-| 05–10 | 3주차 RAG 파이프라인 |
+| 06–10 | 3주차 RAG 파이프라인 |
 | 11–16 | 4주차 Streamlit 챗봇 · 배포 |
 | 17–21 | 5주차 LangSmith Evaluation |
 | 22 | 배포된 앱 링크 |
