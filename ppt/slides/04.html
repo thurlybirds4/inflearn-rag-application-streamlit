@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEEK 2: UNDERSTAND RAG &amp; VECTOR DB</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/slide-base.css">
+<link rel="stylesheet" href="../css/slide-04.css">
+<link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+<div id="stage">
+  <section class="slide slide-04" id="slide">
+    <div class="bg-glow tl"></div>
+    <div class="bg-glow br"></div>
+
+    <header class="slide-header">
+      <div class="kicker">
+        <span class="dot"></span>
+        <span class="label">JOURNEY</span>
+        <span class="line"></span>
+        <span class="sub">WEEK 01 / 06</span>
+      </div>
+      <div class="meta">2026. 07. 24</div>
+    </header>
+
+    <div class="hero">
+      <h1 class="title"><span class="wk">WEEK 2:</span><span class="hi">UNDERSTAND RAG &amp; VECTOR DB</span></h1>
+    </div>
+    <div class="notion-btn">2주차 노션 기록 보기</div>
+    <svg class="cursor-pointer" viewBox="0 0 28 36" fill="none" aria-hidden="true">
+      <path d="M4.2 2.4L4.2 28.4l7.1-6.6 4.6 11.4 4.6-1.8-4.6-11.3 8.9-.2z"
+            fill="#fff" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+
+    <div class="rule"></div>
+    <p class="goal">학습 목표: RAG의 동작 원리를 이해하고, Embedding과 Vector Database가 RAG에서 어떤 역할을 하는지 설명할 수 있다</p>
+
+    <div class="board">
+      <div class="card col">
+        <div class="card-cap">PROBLEM</div>
+        <div class="lead">기존 LLM의 문제점: Hallucination<span class="hair"></span></div>
+        <div class="quote">
+          질문에 대한 정보가 부족하면<br>
+          <b>사실과 다른 내용을 그럴듯하게 생성함</b>
+        </div>
+        <div class="lower">
+          <div class="lead">해결 방법 2가지<span class="hair"></span></div>
+          <div class="items">
+            <div class="item">
+              <div class="r1"><span class="mk">01</span><span class="t">Fine-tuning</span><span class="ko">파인 튜닝</span></div>
+              <div class="d">사전학습된 모델에 특화된 데이터를 추가 학습 · 많은 시간과 비용</div>
+            </div>
+            <div class="item">
+              <div class="r1"><span class="mk">02</span><span class="t">RAG</span><span class="ko">검색 증강 생성</span></div>
+              <div class="d">Vector DB에 저장해 둔 데이터를 참고 · 저비용 · 최신 데이터</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card col wide">
+        <div class="card-cap">WHAT IS RAG</div>
+        <div class="lead">RAG란<span class="hair"></span></div>
+        <div class="quote">
+          외부 문서나 DB에 데이터를 저장해 두고,<br>
+          LLM이 답변을 생성할 때 <b>해당 문서를 먼저 찾아 참고하도록</b> 만드는 방법
+        </div>
+        <div class="lower">
+          <div class="lead">동작 3단계<span class="hair"></span></div>
+          <div class="items">
+            <div class="item">
+              <div class="r1"><span class="mk">R</span><span class="t">Retrieval</span><span class="ko">찾아내다</span></div>
+              <div class="d">질문과 관련된 정보를 Vector DB에서 찾아낸다</div>
+            </div>
+            <div class="item">
+              <div class="r1"><span class="mk">A</span><span class="t">Augmented</span><span class="ko">보완하다</span></div>
+              <div class="d">찾아낸 정보를 프롬프트에 덧붙여 보완한다</div>
+            </div>
+            <div class="item">
+              <div class="r1"><span class="mk">G</span><span class="t">Generation</span><span class="ko">생성하다</span></div>
+              <div class="d">덧붙여진 정보를 참고해 정확도 높은 답변을 생성한다</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card col">
+        <div class="card-cap">VECTOR DB &amp; EMBEDDING</div>
+        <div class="lead">Vector DB란<span class="hair"></span></div>
+        <div class="quote">
+          <b>비정형 데이터를 벡터 임베딩 형태로</b><br>
+          저장하고 관리하는 데이터베이스
+        </div>
+        <div class="lower">
+          <div class="lead">원리와 역할<span class="hair"></span></div>
+          <div class="items">
+            <div class="item">
+              <div class="r1"><span class="mk">01</span><span class="t">Embedding</span><span class="ko">임베딩</span></div>
+              <div class="d">유사한 의미의 데이터가 벡터 공간에서 가까운 거리에 놓인다</div>
+            </div>
+            <div class="item">
+              <div class="r1"><span class="mk">02</span><span class="t">Similarity Search</span><span class="ko">유사도 검색</span></div>
+              <div class="d">질문과 맥락상 가장 가까운 정보를 찾아 프롬프트를 보완한다</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="note">강의는 LangChain v0.2 기준이지만 현재는 v1.3x — 제공된 requirements.txt로 버전을 고정해 의존성 충돌 없는 실습 환경을 맞췄습니다.</p>
+
+    <footer class="slide-footer">
+      <div class="team"></div>
+      <div class="page">04</div>
+    </footer>
+  </section>
+</div>
+<script src="../js/fit-slide.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+</html>

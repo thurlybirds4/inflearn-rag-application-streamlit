@@ -1,0 +1,158 @@
+/* Section title — measured from reference/slide-02.png (1920×1080) */
+
+.slide-02 .bg-glow.tl {
+  width: 920px;
+  height: 920px;
+  top: -400px;
+  left: -300px;
+  background: rgba(59, 130, 246, 0.085);
+}
+
+.slide-02 .bg-glow.br {
+  width: 680px;
+  height: 680px;
+  bottom: -300px;
+  right: -200px;
+  background: rgba(34, 211, 238, 0.055);
+}
+
+.slide-02 .slide-header {
+  top: 84px;
+}
+
+.slide-02 .kicker .label,
+.slide-02 .kicker .sub {
+  font-size: 17.4px;
+}
+
+.slide-02 .title {
+  position: absolute;
+  top: 168px;
+  left: 130px;
+  margin: 0;
+  font-family: var(--font-en);
+  font-weight: 600;
+  font-size: 77px;
+  line-height: 1;
+  letter-spacing: -0.028em;
+  color: var(--text);
+}
+
+.slide-02 .title .hi {
+  color: var(--accent);
+}
+
+.slide-02 .rule {
+  position: absolute;
+  top: 256px;
+  left: 132px;
+  width: 1654px;
+  height: 2px;
+  background: rgb(192, 214, 250);
+}
+
+.slide-02 .journey {
+  position: absolute;
+  top: 372px;
+  left: 132px;
+  width: 1656px;
+  height: 470px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.12fr;
+  gap: 0;
+}
+
+.slide-02 .col {
+  padding: 8px 48px 0 0;
+}
+
+.slide-02 .col + .col {
+  padding-left: 48px;
+  border-left: 1px solid #E4E9F0;
+}
+
+.slide-02 .step {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--text-meta);
+  margin-bottom: 18px;
+}
+
+.slide-02 .step span {
+  color: var(--accent);
+  margin-right: 8px;
+}
+
+.slide-02 .h {
+  margin: 0 0 22px;
+  font-family: var(--font-kr);
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.28;
+  letter-spacing: -0.035em;
+  color: var(--text);
+}
+
+.slide-02 .shift .h {
+  font-family: var(--font-en);
+  font-size: 30px;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+
+.slide-02 .goal .h {
+  font-family: var(--font-en);
+  font-size: 36px;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+
+.slide-02 .goal .h em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.slide-02 .p {
+  margin: 0;
+  font-size: 16.5px;
+  line-height: 1.62;
+  letter-spacing: -0.02em;
+  color: var(--text-body);
+}
+
+.slide-02 .key {
+  position: absolute;
+  left: 132px;
+  top: 876px;
+  width: 1656px;
+  padding-top: 28px;
+  border-top: 1px solid #E4E9F0;
+}
+
+.slide-02 .key .en {
+  margin: 0;
+  font-family: var(--font-en);
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.slide-02 .key .en .hi {
+  color: var(--accent);
+}
+
+.slide-02 .key .kr {
+  margin: 14px 0 0;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--text-body);
+}
+
+.slide-02 .slide-footer .page {
+  letter-spacing: 0.04em;
+  color: #C4CCD7;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEEK 5: EVALUATE THE RAG</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/slide-base.css">
+<link rel="stylesheet" href="../css/week03-shared.css">
+<link rel="stylesheet" href="../css/week05.css">
+<link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+<div id="stage">
+  <section class="slide w3 w5 slide-07" id="slide">
+    <div class="bg-glow tl"></div>
+    <div class="bg-glow br"></div>
+
+    <header class="slide-header">
+      <div class="kicker">
+        <span class="dot"></span>
+        <span class="label">JOURNEY</span>
+        <span class="line"></span>
+        <span class="sub">WEEK 05 / 06</span>
+      </div>
+      <div class="meta">2026. 08. 14</div>
+    </header>
+
+    <div class="hero">
+      <h1 class="title">WEEK 5: <span class="hi">EVALUATE THE RAG</span></h1>
+    </div>
+    <a class="notion-btn" href="https://app.notion.com/p/5-LLM-3caa61c3e75480beae1cce8cc9e9b085" target="_blank" rel="noopener">5주차 노션 기록 보기</a>
+    <svg class="cursor-pointer" viewBox="0 0 28 36" fill="none" aria-hidden="true">
+      <path d="M4.2 2.4L4.2 28.4l7.1-6.6 4.6 11.4 4.6-1.8-4.6-11.3 8.9-.2z"
+            fill="#fff" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+
+    <div class="rule"></div>
+    <p class="goal">학습 목표: RAG와 LLM 애플리케이션을 확장하기 위한 다양한 도구와 방법을 이해한다</p>
+
+    <div class="board">
+      <div class="card col">
+        <div class="head">
+          <div class="step">01</div>
+          <div class="h">왜 평가하는가</div>
+        </div>
+        <p class="p">파이프라인을 만든 것으로 끝나지 않는다. 사용자가 정확한 정보를 받는지 봐야 한다.</p>
+        <div class="tags">
+          <span>운영 안정</span>
+          <span>정답 vs 응답</span>
+        </div>
+      </div>
+      <div class="card col">
+        <div class="head">
+          <div class="step">02</div>
+          <div class="h">LangSmith 설정</div>
+        </div>
+        <p class="p">회원가입 후 API 키를 발급하고, .env에 LANGCHAIN_* 변수를 넣었다.</p>
+        <div class="tags">
+          <span>LANGCHAIN_API_KEY</span>
+          <span>TRACING_V2</span>
+        </div>
+      </div>
+      <div class="card col">
+        <div class="head">
+          <div class="step">03</div>
+          <div class="h">정답 데이터</div>
+        </div>
+        <p class="p">질문·정답 쌍을 만들고 income_tax_dataset으로 LangSmith에 올렸다.</p>
+        <div class="tags">
+          <span>create_dataset</span>
+          <span>create_examples</span>
+        </div>
+      </div>
+      <div class="card col">
+        <div class="head">
+          <div class="step">04</div>
+          <div class="h">응답 vs 정답</div>
+        </div>
+        <p class="p">RagBot 답변과 Ground Truth를 비교하는 evaluator를 준비했다.</p>
+        <div class="tags">
+          <span>RagBot</span>
+          <span>evaluate</span>
+        </div>
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <div class="team"></div>
+      <div class="page">07</div>
+    </footer>
+  </section>
+</div>
+<script src="../js/fit-slide.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+</html>

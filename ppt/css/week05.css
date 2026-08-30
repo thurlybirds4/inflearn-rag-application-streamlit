@@ -1,0 +1,433 @@
+/* ── week 05 : 4-step board ──────────────────────────── */
+.w5 .board-4 {
+  position: absolute;
+  top: 348px;
+  left: 133px;
+  width: 1653px;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+.w5 .board-4 .col {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.w5 .board-4 .head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+}
+
+.w5 .board-4 .step {
+  flex: none;
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.w5 .board-4 .h {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.w5 .board-4 .col.is-dim { overflow: hidden; }
+
+.w5 .board-4 .col.is-dim::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(17, 24, 39, 0.46);
+  box-shadow: inset 0 0 0 1px rgba(17, 24, 39, 0.12);
+  pointer-events: none;
+}
+
+/* ── slide-07 : overview ─────────────────────────────── */
+.slide-07 .board {
+  position: absolute;
+  top: 348px;
+  left: 133px;
+  width: 1653px;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+.slide-07 .col {
+  padding: 22px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: padding 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slide-07 .head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+  min-width: 0;
+  transition: margin 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slide-07 .step {
+  flex: none;
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.slide-07 .h {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.slide-07 .p {
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--text-body);
+  letter-spacing: -0.02em;
+  overflow: hidden;
+  max-height: 160px;
+  transition: opacity 0.35s ease, max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slide-07 .tags {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  overflow: hidden;
+  max-height: 48px;
+  transition: opacity 0.35s ease, max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1), margin 0.45s ease;
+}
+
+.slide-07 .tags span {
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--soft-blue);
+  border-radius: 8px;
+  padding: 5px 7px;
+  white-space: nowrap;
+}
+
+.slide-07.is-leaving .col {
+  padding: 16px 18px;
+}
+
+.slide-07.is-leaving .head {
+  margin-bottom: 0;
+}
+
+.slide-07.is-leaving .p,
+.slide-07.is-leaving .tags {
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+}
+
+.slide-07.is-leaving .col:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(17, 24, 39, 0.46);
+  box-shadow: inset 0 0 0 1px rgba(17, 24, 39, 0.12);
+  pointer-events: none;
+  animation: w5-pipe-dim 0.45s ease forwards;
+}
+
+@keyframes w5-pipe-dim {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── slide-07-01 : why evaluate ──────────────────────── */
+.slide-07-01 .path {
+  position: absolute;
+  top: 456px;
+  left: 133px;
+  width: 1653px;
+  height: 140px;
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr 40px 1fr;
+  align-items: stretch;
+}
+
+.slide-07-01 .box {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: 22px;
+  box-shadow: var(--card-shadow);
+  padding: 20px 22px 16px;
+}
+
+.slide-07-01 .box .n {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.slide-07-01 .box .h {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-bottom: 6px;
+}
+
+.slide-07-01 .box .p {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--text-body);
+}
+
+.slide-07-01 .arr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #93C5FD;
+  font-size: 22px;
+}
+
+.slide-07-01 .why {
+  position: absolute;
+  top: 616px;
+  left: 133px;
+  width: 1653px;
+  height: 348px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.slide-07-01 .why .card {
+  padding: 24px 26px 20px;
+}
+
+.slide-07-01 .why .card-cap { margin-bottom: 14px; }
+
+.slide-07-01 .why li {
+  margin: 0 0 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-title-2);
+  letter-spacing: -0.02em;
+}
+
+.slide-07-01 .why ul { margin: 0; padding-left: 20px; }
+
+/* ── slide-07-02 : setup + dataset code ──────────────── */
+.slide-07-02 .body {
+  position: absolute;
+  top: 456px;
+  left: 133px;
+  width: 1653px;
+  height: 508px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.slide-07-02 .body .card {
+  padding: 20px 22px 16px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.slide-07-02 .body .card-cap { margin-bottom: 10px; }
+
+.slide-07-02 .body .code {
+  flex: 1;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.slide-07-02 .env {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slide-07-02 .env .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid #F2F5F9;
+  font-size: 15px;
+}
+
+.slide-07-02 .env .k { color: var(--text-meta); }
+.slide-07-02 .env .v {
+  font-family: var(--font-en);
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ── slide-07-03 : dataset table + compare ───────────── */
+.slide-07-03 .split {
+  position: absolute;
+  top: 456px;
+  left: 133px;
+  width: 1653px;
+  height: 508px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 18px;
+}
+
+.slide-07-03 .card { padding: 20px 22px 16px; min-width: 0; }
+
+.slide-07-03 .card-cap { margin-bottom: 12px; }
+
+.slide-07-03 table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.slide-07-03 th {
+  text-align: left;
+  font-family: var(--font-en);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text-meta);
+  padding: 8px 8px 10px 0;
+  border-bottom: 1px solid #E6EAF0;
+}
+
+.slide-07-03 td {
+  padding: 10px 8px 10px 0;
+  border-bottom: 1px solid #F2F5F9;
+  vertical-align: top;
+  line-height: 1.45;
+  color: var(--text-title-2);
+}
+
+.slide-07-03 .cmp {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slide-07-03 .lane {
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: #F3F6FA;
+}
+
+.slide-07-03 .lane .n {
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.slide-07-03 .lane .t {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.slide-07-03 .vs {
+  text-align: center;
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+/* ── slide-07-04 : ragbot + evaluate ─────────────────── */
+.slide-07-04 .codes {
+  position: absolute;
+  top: 456px;
+  left: 133px;
+  width: 1653px;
+  height: 360px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.slide-07-04 .codes .card {
+  padding: 18px 20px 14px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.slide-07-04 .codes .card-cap { margin-bottom: 10px; }
+
+.slide-07-04 .codes .code {
+  flex: 1;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.slide-07-04 .note {
+  position: absolute;
+  top: 832px;
+  left: 133px;
+  width: 1653px;
+  height: 132px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.slide-07-04 .note .card-cap { margin-bottom: 0; }
+
+.slide-07-04 .note p {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.slide-07-04 .need {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: #FEF0D8;
+  color: #F1823D;
+  font-size: 13px;
+  font-weight: 700;
+}

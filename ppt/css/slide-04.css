@@ -1,0 +1,250 @@
+/* Week 02 — measured from reference/slide-04.png (1920×1080) */
+
+.slide-04 .bg-glow.tl {
+  width: 920px;
+  height: 920px;
+  top: -400px;
+  left: -300px;
+  background: rgba(59, 130, 246, 0.085);
+}
+
+.slide-04 .bg-glow.br {
+  width: 680px;
+  height: 680px;
+  bottom: -300px;
+  right: -200px;
+  background: rgba(34, 211, 238, 0.055);
+}
+
+.slide-04 .slide-header {
+  top: 84px;
+}
+
+.slide-04 .slide-header .meta {
+  position: absolute;
+  top: -6px;
+  right: 15px;
+  font-family: var(--font-en);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.045em;
+  color: var(--text-meta);
+}
+
+.slide-04 .hero {
+  position: absolute;
+  top: 167px;
+  left: 130px;
+  right: 132px;
+}
+
+.slide-04 .title {
+  margin: 0;
+  font-family: var(--font-en);
+  font-weight: 600;
+  font-size: 76px;
+  line-height: 1;
+  color: var(--text);
+  display: flex;
+  align-items: baseline;
+}
+
+.slide-04 .title .wk {
+  letter-spacing: -0.028em;
+}
+
+.slide-04 .title .hi {
+  color: var(--accent);
+  margin-left: 22px;
+  letter-spacing: -0.033em;
+}
+
+.slide-04 .notion-btn {
+  position: absolute;
+  top: 197px;
+  left: 1608px;
+  width: 169px;
+  height: 32px;
+  padding: 0 22px 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: #FEF0D8;
+  box-shadow: -2px 4px 8px rgba(180, 110, 40, 0.14);
+  font-family: var(--font-kr);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #F1823D;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  line-height: 32px;
+}
+
+.slide-04 .cursor-pointer {
+  position: absolute;
+  top: 214px;
+  left: 1744px;
+  width: 24px;
+  height: 31px;
+  pointer-events: none;
+  filter: drop-shadow(1px 2px 2px rgba(17, 24, 39, 0.18));
+}
+
+.slide-04 .rule {
+  position: absolute;
+  top: 256px;
+  left: 132px;
+  width: 1654px;
+  height: 2px;
+  background: rgb(181, 207, 249);
+}
+
+.slide-04 .goal {
+  position: absolute;
+  top: 268px;
+  left: 134px;
+  margin: 0;
+  font-family: var(--font-kr);
+  font-size: 21.1px;
+  font-weight: 400;
+  color: var(--text-body);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.slide-04 .board {
+  position: absolute;
+  top: 351px;
+  left: 133px;
+  width: 1653px;
+  height: 584px;
+  display: grid;
+  grid-template-columns: 499px 600px 499px;
+  gap: 29px;
+}
+
+.slide-04 .col {
+  padding: 43px 39px 76px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-04 .col.wide {
+  padding-bottom: 28px;
+}
+
+.slide-04 .col .card-cap {
+  margin-bottom: 46px;
+}
+
+.slide-04 .lead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-meta);
+  letter-spacing: -0.015em;
+  line-height: 1;
+}
+
+.slide-04 .lead .hair {
+  flex: 1;
+  height: 1px;
+  background: #EDF1F6;
+}
+
+.slide-04 .lower {
+  margin-top: auto;
+}
+
+.slide-04 .lower .lead {
+  margin-bottom: 21px;
+}
+
+.slide-04 .quote {
+  padding: 0 0 0 16px;
+  border-left: 3px solid var(--accent);
+  font-size: 17.6px;
+  line-height: 1.52;
+  color: #4B5563;
+  letter-spacing: -0.015em;
+}
+
+.slide-04 .quote b {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.slide-04 .items {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.slide-04 .item {
+  height: 84px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slide-04 .item .r1 {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.slide-04 .item .mk {
+  font-family: var(--font-en);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #C3CAD6;
+  min-width: 22px;
+}
+
+.slide-04 .item .t {
+  font-family: var(--font-en);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.slide-04 .item .ko {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.slide-04 .item .d {
+  margin-top: 6px;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--text-meta);
+  letter-spacing: -0.025em;
+}
+
+.slide-04 .note {
+  position: absolute;
+  top: 959px;
+  left: 133px;
+  margin: 0;
+  font-size: 16.5px;
+  font-weight: 400;
+  color: #9AA3B0;
+  letter-spacing: -0.016em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.slide-04 .slide-footer .page {
+  letter-spacing: 0.04em;
+  color: #C4CCD7;
+}

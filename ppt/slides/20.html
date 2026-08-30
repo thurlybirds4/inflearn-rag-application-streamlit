@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEEK 5: EVALUATE THE RAG — 03</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/slide-base.css">
+<link rel="stylesheet" href="../css/week03-shared.css">
+<link rel="stylesheet" href="../css/week05.css">
+<link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+<div id="stage">
+  <section class="slide w3 w5 slide-07-03" id="slide">
+    <div class="bg-glow tl"></div>
+    <div class="bg-glow br"></div>
+
+    <header class="slide-header">
+      <div class="kicker">
+        <span class="dot"></span>
+        <span class="label">JOURNEY</span>
+        <span class="line"></span>
+        <span class="sub">WEEK 05 / 06</span>
+      </div>
+      <div class="meta">2026. 08. 14</div>
+    </header>
+
+    <div class="hero">
+      <h1 class="title">WEEK 5: <span class="hi">EVALUATE THE RAG</span></h1>
+    </div>
+    <a class="notion-btn" href="https://app.notion.com/p/5-LLM-3caa61c3e75480beae1cce8cc9e9b085" target="_blank" rel="noopener">5주차 노션 기록 보기</a>
+    <svg class="cursor-pointer" viewBox="0 0 28 36" fill="none" aria-hidden="true">
+      <path d="M4.2 2.4L4.2 28.4l7.1-6.6 4.6 11.4 4.6-1.8-4.6-11.3 8.9-.2z"
+            fill="#fff" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+
+    <div class="rule"></div>
+    <p class="goal">학습 목표: RAG와 LLM 애플리케이션을 확장하기 위한 다양한 도구와 방법을 이해한다</p>
+
+    <div class="board-4">
+      <div class="card col is-dim">
+        <div class="head"><div class="step">01</div><div class="h">왜 평가하는가</div></div>
+      </div>
+      <div class="card col is-dim">
+        <div class="head"><div class="step">02</div><div class="h">LangSmith 설정</div></div>
+      </div>
+      <div class="card col">
+        <div class="head"><div class="step">03</div><div class="h">정답 데이터</div></div>
+      </div>
+      <div class="card col is-dim">
+        <div class="head"><div class="step">04</div><div class="h">응답 vs 정답</div></div>
+      </div>
+    </div>
+
+    <div class="split">
+      <div class="card">
+        <div class="card-cap">INCOME_TAX_DATASET  ·  20 PAIRS</div>
+        <table>
+          <thead>
+            <tr><th>QUESTION</th><th>GROUND TRUTH</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>제1조에 따른 소득세법의 목적은 무엇인가요?</td>
+              <td>소득의 성격과 납세자의 부담능력에 따라 적정하게 과세함으로써 조세부담의 형평을 도모하고…</td>
+            </tr>
+            <tr>
+              <td>‘거주자’는 소득세법에서 어떻게 정의되나요?</td>
+              <td>한국에 주소를 두거나 183일 이상 거소를 둔 개인</td>
+            </tr>
+            <tr>
+              <td>‘비거주자’는 소득세법에 따라 어떻게 정의되나요?</td>
+              <td>거주자가 아닌 개인</td>
+            </tr>
+            <tr>
+              <td>소득세법에 따른 ‘내국법인’은 누구를 의미하나요?</td>
+              <td>법인세법 제2조 제1호에 따른 내국법인</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card cmp">
+        <div class="card-cap">COMPARE</div>
+        <div class="lane">
+          <div class="n">QUESTION</div>
+          <div class="t">‘비거주자’는 소득세법에 따라 어떻게 정의되나요?</div>
+        </div>
+        <div class="lane">
+          <div class="n">RAG PIPELINE  →  GENERATED</div>
+          <div class="t">RagBot.get_answer(question) 의 answer</div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="lane">
+          <div class="n">GROUND TRUTH</div>
+          <div class="t">‘비거주자’는 거주자가 아닌 개인을 의미합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <div class="team"></div>
+      <div class="page">07</div>
+    </footer>
+  </section>
+</div>
+<script src="../js/fit-slide.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+</html>

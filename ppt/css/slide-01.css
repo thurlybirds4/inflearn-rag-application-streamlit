@@ -1,0 +1,49 @@
+/* Cover — measured from reference/slide-01.png (1920×1080) */
+
+.slide-01 .title {
+  position: absolute;
+  top: 327px;
+  left: 132px;
+  margin: 0;
+  font-family: var(--font-en);
+  font-weight: 600;
+  font-size: 132px;
+  line-height: 136px;
+  letter-spacing: -0.039em;
+  color: var(--text);
+}
+
+.slide-01 .title .ai {
+  color: var(--accent);
+}
+
+.slide-01 .title .l2 {
+  display: block;
+  font-weight: 300;
+  color: var(--text-title-2);
+  letter-spacing: -0.0485em;
+}
+
+.slide-01 .rule {
+  position: absolute;
+  top: 627px;
+  left: 132px;
+  width: 130px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.slide-01 .lead {
+  position: absolute;
+  top: 647px;
+  left: 132px;
+  margin: 0;
+  font-family: var(--font-kr);
+  font-size: 25.2px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  color: var(--text-body);
+  white-space: nowrap;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROBLEM SOLVING — 03 04</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/slide-base.css">
+<link rel="stylesheet" href="../css/week03-shared.css">
+<link rel="stylesheet" href="../css/week09.css">
+<link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+<div id="stage">
+  <section class="slide w3 w9 slide-09-01" id="slide">
+    <div class="bg-glow tl"></div>
+    <div class="bg-glow br"></div>
+
+    <header class="slide-header">
+      <div class="kicker">
+        <span class="dot"></span>
+        <span class="label">INSIGHT</span>
+        <span class="line"></span>
+        <span class="sub">WEEK 02–05</span>
+      </div>
+      <div class="meta">2026. 08. 14</div>
+    </header>
+
+    <div class="hero">
+      <h1 class="title">PROBLEM <span class="hi">SOLVING</span></h1>
+    </div>
+
+    <div class="rule"></div>
+    <p class="goal">구현 중 만난 오류를 원인까지 보고, 코드로 고친 기록</p>
+
+    <div class="cols">
+      <div class="card col">
+        <div class="col-top">
+          <div class="no">03</div>
+          <div class="name">RATE LIMIT</div>
+        </div>
+        <h2>429로 적재가 멈췄다</h2>
+        <div class="stack">
+          <div class="cell">
+            <div class="lab">PROBLEM</div>
+            <div class="txt">대량 청크를 한 번에 임베딩하자 <b>429 Quota Exceeded</b>가 났다.</div>
+          </div>
+          <div class="cell is-fail">
+            <div class="lab">CAUSE</div>
+            <div class="txt">한 번에 요청이 몰렸다. 임베딩 모델을 바꿔봐도 quota 문제는 그대로였다.</div>
+          </div>
+          <div class="cell">
+            <div class="lab">SOLUTION</div>
+            <div class="txt"><b>batch_size=5</b>, 대기 10→20→40→80→160초, 배치 사이 <b>sleep(5)</b>로 적재를 마쳤다.</div>
+          </div>
+          <div class="cell is-end">
+            <div class="lab">INSIGHT</div>
+            <div class="txt">외부 API를 한 번에 밀어넣는 대신, <b>Rate Limit을 전제로</b> 안정적으로 처리해야 했다.</div>
+          </div>
+        </div>
+        <pre class="code"><code>wait_seconds = (<span class="nm">2 ** attempt</span>) * <span class="nm">10</span>
+time.sleep(wait_seconds)          <span class="cm"># 10 → 160</span>
+batch_size = <span class="nm">5</span>
+add_documents_with_retry(database, batch)
+time.sleep(<span class="nm">5</span>)</code></pre>
+      </div>
+
+      <div class="card col">
+        <div class="col-top">
+          <div class="no">04</div>
+          <div class="name">LOCAL VS DEPLOY</div>
+        </div>
+        <h2>로컬에선 됐는데 Cloud에서 모듈을 못 찾았다</h2>
+        <div class="stack">
+          <div class="cell">
+            <div class="lab">PROBLEM</div>
+            <div class="txt">로컬에서는 되던 챗봇이 Streamlit Cloud에서 <b>ModuleNotFoundError</b>를 냈다.</div>
+          </div>
+          <div class="cell is-fail">
+            <div class="lab">CAUSE</div>
+            <div class="txt">배포에 필요한 <b>langchain_google_genai</b> 버전과 의존성이 requirements.txt에 빠져 있었다.</div>
+          </div>
+          <div class="cell">
+            <div class="lab">SOLUTION</div>
+            <div class="txt">문제 난 패키지 하나만 넣지 않고, 쓰는 패키지를 전부 <b>freeze</b>해서 다시 적었다.</div>
+          </div>
+          <div class="cell is-end">
+            <div class="lab">INSIGHT</div>
+            <div class="txt"><b>로컬과 배포는 같지 않다.</b> 재현 가능한 실행을 만들려면 의존성을 버전까지 관리해야 했다.</div>
+          </div>
+        </div>
+        <pre class="code"><code>pip freeze &gt; requirements.txt</code></pre>
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <div class="team"></div>
+      <div class="page">09</div>
+    </footer>
+  </section>
+</div>
+<script src="../js/fit-slide.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+</html>

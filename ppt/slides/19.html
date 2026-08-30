@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEEK 5: EVALUATE THE RAG — 02</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/slide-base.css">
+<link rel="stylesheet" href="../css/week03-shared.css">
+<link rel="stylesheet" href="../css/week05.css">
+<link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+<div id="stage">
+  <section class="slide w3 w5 slide-07-02" id="slide">
+    <div class="bg-glow tl"></div>
+    <div class="bg-glow br"></div>
+
+    <header class="slide-header">
+      <div class="kicker">
+        <span class="dot"></span>
+        <span class="label">JOURNEY</span>
+        <span class="line"></span>
+        <span class="sub">WEEK 05 / 06</span>
+      </div>
+      <div class="meta">2026. 08. 14</div>
+    </header>
+
+    <div class="hero">
+      <h1 class="title">WEEK 5: <span class="hi">EVALUATE THE RAG</span></h1>
+    </div>
+    <a class="notion-btn" href="https://app.notion.com/p/5-LLM-3caa61c3e75480beae1cce8cc9e9b085" target="_blank" rel="noopener">5주차 노션 기록 보기</a>
+    <svg class="cursor-pointer" viewBox="0 0 28 36" fill="none" aria-hidden="true">
+      <path d="M4.2 2.4L4.2 28.4l7.1-6.6 4.6 11.4 4.6-1.8-4.6-11.3 8.9-.2z"
+            fill="#fff" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+
+    <div class="rule"></div>
+    <p class="goal">학습 목표: RAG와 LLM 애플리케이션을 확장하기 위한 다양한 도구와 방법을 이해한다</p>
+
+    <div class="board-4">
+      <div class="card col is-dim">
+        <div class="head"><div class="step">01</div><div class="h">왜 평가하는가</div></div>
+      </div>
+      <div class="card col">
+        <div class="head"><div class="step">02</div><div class="h">LangSmith 설정</div></div>
+      </div>
+      <div class="card col is-dim">
+        <div class="head"><div class="step">03</div><div class="h">정답 데이터</div></div>
+      </div>
+      <div class="card col is-dim">
+        <div class="head"><div class="step">04</div><div class="h">응답 vs 정답</div></div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="card">
+        <div class="card-cap">.ENV  ·  SMITH.LANGCHAIN.COM</div>
+        <div class="env">
+          <div class="row"><span class="k">LANGCHAIN_API_KEY</span><span class="v">발급한 키</span></div>
+          <div class="row"><span class="k">LANGCHAIN_TRACING_V2</span><span class="v">true</span></div>
+          <div class="row"><span class="k">LANGCHAIN_PROJECT</span><span class="v">default</span></div>
+          <div class="row"><span class="k">LANGCHAIN_ENDPOINT</span><span class="v">api.smith.langchain.com</span></div>
+        </div>
+        <pre class="code" style="margin-top:16px"><code><span class="kw">from</span> langsmith <span class="kw">import</span> Client
+<span class="kw">from</span> dotenv <span class="kw">import</span> load_dotenv
+load_dotenv()
+client = Client(api_key=os.getenv(<span class="str">"LANGCHAIN_API_KEY"</span>))</code></pre>
+      </div>
+      <div class="card">
+        <div class="card-cap">5.1.IPYNB  ·  CREATE DATASET</div>
+        <pre class="code"><code>dataset_name = <span class="str">"income_tax_dataset"</span>
+dataset = client.create_dataset(dataset_name)
+client.create_examples(
+    inputs=[
+        {<span class="str">"input_question"</span>: <span class="str">"'비거주자'는 소득세법에 따라 어떻게 정의되나요?"</span>},
+        <span class="cm"># ... 질문 20개</span>
+    ],
+    outputs=[
+        {<span class="str">"output_answer"</span>: <span class="str">"'비거주자'는 거주자가 아닌 개인을 의미합니다."</span>},
+        <span class="cm"># ... 정답 20개</span>
+    ],
+    metadata=[{<span class="str">"contexts"</span>: <span class="str">"제1조의2(정의) …"</span>}, <span class="cm"># ...</span>],
+    dataset_id=dataset.id,
+)</code></pre>
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <div class="team"></div>
+      <div class="page">07</div>
+    </footer>
+  </section>
+</div>
+<script src="../js/fit-slide.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+</html>

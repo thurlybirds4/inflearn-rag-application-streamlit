@@ -1,0 +1,29 @@
+#nav-hint {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 16px rgba(17, 24, 39, 0.12);
+  color: #3B82F6;
+  pointer-events: none;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+#nav-hint.is-left,
+#nav-hint.is-right { opacity: 1; }
+
+#nav-hint svg {
+  width: 22px;
+  height: 22px;
+  display: none;
+}
+
+#nav-hint.is-left .nav-left,
+#nav-hint.is-right .nav-right { display: block; }

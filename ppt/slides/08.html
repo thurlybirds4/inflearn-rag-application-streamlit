@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEEK 3: BUILD RAG PIPELINE — 02</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/slide-base.css">
+<link rel="stylesheet" href="../css/week03-shared.css">
+<link rel="stylesheet" href="../css/week03.css">
+<link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+<div id="stage">
+  <section class="slide w3 slide-05b-01 slide-05b-02" id="slide">
+    <div class="bg-glow tl"></div>
+    <div class="bg-glow br"></div>
+
+    <header class="slide-header">
+      <div class="kicker">
+        <span class="dot"></span>
+        <span class="label">JOURNEY</span>
+        <span class="line"></span>
+        <span class="sub">WEEK 03 / 06</span>
+      </div>
+      <div class="meta">2026. 07. 31</div>
+    </header>
+
+    <div class="hero">
+      <h1 class="title">WEEK 3: <span class="hi">BUILD RAG PIPELINE</span></h1>
+    </div>
+    <a class="notion-btn" href="https://app.notion.com/p/3-LangChain-RAG-3caa61c3e7548057b16ada28204a59c7" target="_blank" rel="noopener">3주차 노션 기록 보기</a>
+    <svg class="cursor-pointer" viewBox="0 0 28 36" fill="none" aria-hidden="true">
+      <path d="M4.2 2.4L4.2 28.4l7.1-6.6 4.6 11.4 4.6-1.8-4.6-11.3 8.9-.2z"
+            fill="#fff" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+
+    <div class="rule"></div>
+    <p class="goal">학습 목표: LangChain을 활용해 기본적인 RAG Pipeline을 구현하고, Vector Database 변경 및 데이터 전처리 등을 적용할 수 있다</p>
+
+    <div class="board">
+      <div class="card col is-dim">
+        <div class="head">
+          <div class="step">01</div>
+          <div class="h">프로젝트 환경세팅 &amp; LLM Check</div>
+        </div>
+      </div>
+      <div class="card col">
+        <div class="head">
+          <div class="step">02</div>
+          <div class="h">RAG Pipeline 구현</div>
+        </div>
+      </div>
+      <div class="card col is-dim">
+        <div class="head">
+          <div class="step">03</div>
+          <div class="h">Vector Database 변경</div>
+        </div>
+      </div>
+      <div class="card col is-dim">
+        <div class="head">
+          <div class="step">04</div>
+          <div class="h">데이터 전처리</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="node">
+        <div class="no">01</div>
+        <div class="en">Document<br>Loading</div>
+        <div class="ko">소득세법 DOCX 로드</div>
+        <div class="tech">Docx2txtLoader</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="no">02</div>
+        <div class="en">Text<br>Splitting</div>
+        <div class="ko">청크로 분할</div>
+        <div class="tech">RecursiveCharacterTextSplitter</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="no">03</div>
+        <div class="en">Embedding</div>
+        <div class="ko">청크 벡터화</div>
+        <div class="tech">GoogleGenerativeAIEmbeddings</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="no">04</div>
+        <div class="en">Vector<br>Store</div>
+        <div class="ko">벡터 DB 저장</div>
+        <div class="tech">Chroma → Pinecone</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="no">05</div>
+        <div class="en">Retrieval</div>
+        <div class="ko">유사 문맥 검색</div>
+        <div class="tech">similarity_search</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="no">06</div>
+        <div class="en">Prompt</div>
+        <div class="ko">컨텍스트 보강</div>
+        <div class="tech">f-string → Hub</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="no">07</div>
+        <div class="en">LLM<br>Response</div>
+        <div class="ko">답변 생성</div>
+        <div class="tech">ChatGoogleGenerativeAI</div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <div class="card">
+        <div class="card-cap">WHAT WE ACTUALLY USED</div>
+        <div class="did">
+          <div class="row"><span class="k">DOCUMENT</span><span class="v">국가법령정보센터 소득세법 · ./tax_docs/tax.docx</span></div>
+          <div class="row"><span class="k">SPLIT</span><span class="v">chunk_size=1500 · chunk_overlap=200 · 189 chunks</span></div>
+          <div class="row"><span class="k">EMBED</span><span class="v">models/gemini-embedding-001</span></div>
+          <div class="row"><span class="k">STORE</span><span class="v">Chroma chroma-tax-table → Pinecone tax-index</span></div>
+          <div class="row"><span class="k">LLM</span><span class="v">ChatGoogleGenerativeAI · gemini-3.6-flash</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-cap">QUERY WE ASKED</div>
+        <div class="note-box">연봉 5천만원인 직장인의 소득세는 얼마인가요?</div>
+        <div class="lead">실습에서 확인한 것<span class="hair"></span></div>
+        <p class="note-box">파이프라인은 연결됐지만, 표 데이터가 빠지면서 정확한 세액을 계산하지 못했다. 이후 Vector DB 교체와 표 전처리로 이어서 수정했다.</p>
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <div class="team"></div>
+      <div class="page">05</div>
+    </footer>
+  </section>
+</div>
+<script src="../js/fit-slide.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+</html>

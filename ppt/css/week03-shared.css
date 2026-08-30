@@ -1,0 +1,183 @@
+/* Week 03 shared chrome — same tokens / type / cards as slides 01–04 */
+
+.w3 .bg-glow.tl {
+  width: 920px;
+  height: 920px;
+  top: -400px;
+  left: -300px;
+  background: rgba(59, 130, 246, 0.085);
+}
+
+.w3 .bg-glow.br {
+  width: 680px;
+  height: 680px;
+  bottom: -300px;
+  right: -200px;
+  background: rgba(34, 211, 238, 0.055);
+}
+
+.w3 .slide-header {
+  top: 84px;
+}
+
+.w3 .slide-header .meta {
+  font-family: var(--font-en);
+  font-size: 16.2px;
+  letter-spacing: 0.03em;
+}
+
+.w3 .hero {
+  position: absolute;
+  top: 167px;
+  left: 130px;
+  right: 132px;
+}
+
+.w3 .title {
+  margin: 0;
+  font-family: var(--font-en);
+  font-weight: 600;
+  font-size: 76px;
+  line-height: 1;
+  letter-spacing: -0.032em;
+  color: var(--text);
+}
+
+.w3 .title .hi {
+  color: var(--accent);
+}
+
+.w3 .title-sm {
+  position: absolute;
+  top: 168px;
+  left: 132px;
+  margin: 0;
+  font-family: var(--font-en);
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.w3 .title-sm .hi {
+  color: var(--accent);
+}
+
+.w3 .notion-btn {
+  position: absolute;
+  top: 195px;
+  left: 1608px;
+  height: 34px;
+  padding: 0 28px 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: #FEF0D8;
+  box-shadow: -2px 4px 8px rgba(180, 110, 40, 0.14);
+  font-family: var(--font-kr);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #F1823D;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  line-height: 34px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.w3 .cursor-pointer {
+  position: absolute;
+  top: 212px;
+  left: 1744px;
+  width: 24px;
+  height: 31px;
+  pointer-events: none;
+  filter: drop-shadow(1px 2px 2px rgba(17, 24, 39, 0.18));
+}
+
+.w3 .rule {
+  position: absolute;
+  top: 256px;
+  left: 132px;
+  width: 1654px;
+  height: 2px;
+  background: rgb(181, 207, 249);
+}
+
+.w3 .goal {
+  position: absolute;
+  top: 268px;
+  left: 134px;
+  margin: 0;
+  font-family: var(--font-kr);
+  font-size: 21.2px;
+  font-weight: 400;
+  color: var(--text-body);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.w3 .slide-footer .page {
+  letter-spacing: 0.04em;
+  color: #C4CCD7;
+}
+
+/* compact week pages: title sits on the rule row */
+.w3.is-compact .rule {
+  top: 230px;
+}
+
+.w3.is-compact .title-sm {
+  top: 164px;
+}
+
+/* code block */
+.w3 .code {
+  margin: 0;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: #F3F6FA;
+  border: 1px solid #E6EAF0;
+  font-family: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #334155;
+  letter-spacing: -0.02em;
+  overflow: hidden;
+  white-space: pre;
+}
+
+.w3 .code .kw { color: var(--accent); font-weight: 600; }
+.w3 .code .str { color: #0F766E; }
+.w3 .code .cm { color: #94A3B8; }
+.w3 .code .nm { color: var(--text); font-weight: 600; }
+
+.w3 .src {
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-meta);
+}
+
+.w3 .card-cap {
+  margin-bottom: 16px;
+}
+
+.w3 .lead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-meta);
+  letter-spacing: -0.02em;
+}
+
+.w3 .lead .hair {
+  flex: 1;
+  height: 1px;
+  background: #EDF1F6;
+}

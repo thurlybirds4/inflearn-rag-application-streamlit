@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEEK 4: SHIP THE CHATBOT — 05</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/slide-base.css">
+<link rel="stylesheet" href="../css/week03-shared.css">
+<link rel="stylesheet" href="../css/week04.css">
+<link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+<div id="stage">
+  <section class="slide w3 w4 slide-06-05" id="slide">
+    <div class="bg-glow tl"></div>
+    <div class="bg-glow br"></div>
+
+    <header class="slide-header">
+      <div class="kicker">
+        <span class="dot"></span>
+        <span class="label">JOURNEY</span>
+        <span class="line"></span>
+        <span class="sub">WEEK 04 / 06</span>
+      </div>
+      <div class="meta">2026. 08. 07</div>
+    </header>
+
+    <div class="hero">
+      <h1 class="title">WEEK 4: <span class="hi">SHIP THE CHATBOT</span></h1>
+    </div>
+    <a class="notion-btn" href="https://app.notion.com/p/4-Streamlit-AI-Web-3caa61c3e7548070b6eeca705daac368" target="_blank" rel="noopener">4주차 노션 기록 보기</a>
+    <svg class="cursor-pointer" viewBox="0 0 28 36" fill="none" aria-hidden="true">
+      <path d="M4.2 2.4L4.2 28.4l7.1-6.6 4.6 11.4 4.6-1.8-4.6-11.3 8.9-.2z"
+            fill="#fff" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+
+    <div class="rule"></div>
+    <p class="goal">학습 목표: RAG 기반 ChatBot을 구현하고 웹 서비스 형태로 배포할 수 있다</p>
+
+    <div class="board-5">
+      <div class="card col is-dim">
+        <div class="head"><div class="step">01</div><div class="h">Streamlit UI</div></div>
+      </div>
+      <div class="card col is-dim">
+        <div class="head"><div class="step">02</div><div class="h">LLM 연결</div></div>
+      </div>
+      <div class="card col is-dim">
+        <div class="head"><div class="step">03</div><div class="h">History &amp; Stream</div></div>
+      </div>
+      <div class="card col is-dim">
+        <div class="head"><div class="step">04</div><div class="h">Refactoring</div></div>
+      </div>
+      <div class="card col">
+        <div class="head"><div class="step">05</div><div class="h">Cloud Deploy</div></div>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <div class="box">
+        <div class="n">01</div>
+        <div class="h">freeze</div>
+        <p class="p">pip freeze &gt; requirements.txt 로 로컬 패키지 버전을 그대로 적었다.</p>
+      </div>
+      <div class="arr">→</div>
+      <div class="box">
+        <div class="n">02</div>
+        <div class="h">GitHub</div>
+        <p class="p">main 브랜치에 챗봇 코드를 push했다.</p>
+      </div>
+      <div class="arr">→</div>
+      <div class="box">
+        <div class="n">03</div>
+        <div class="h">Create app</div>
+        <p class="p">Repository · Branch · Main file path chat.py</p>
+      </div>
+      <div class="arr">→</div>
+      <div class="box">
+        <div class="n">04</div>
+        <div class="h">Secrets</div>
+        <p class="p">Advanced setting에 API 키를 문자열로 넣었다.</p>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="card">
+        <div class="card-cap">REQUIREMENTS  ·  PUSH</div>
+        <pre class="code"><code>pip freeze
+pip freeze &gt; requirements.txt
+
+git add requirements.txt
+git commit -m <span class="str">"Add requirements.txt"</span>
+git push origin main
+
+git branch -M main
+git remote add origin YOUR_REPOSITORY_URL
+git push -u origin main</code></pre>
+      </div>
+      <div class="card">
+        <div class="card-cap">STREAMLIT CLOUD  ·  CREATE APP</div>
+        <div class="issue">
+          <div class="item">
+            <div class="t">연결한 값</div>
+            <div class="d">GitHub Repository · Branch · Main file path <b>chat.py</b></div>
+          </div>
+          <div class="item">
+            <div class="t">Advanced setting</div>
+            <div class="d">환경변수 API 키를 문자열로 넣었다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <div class="team"></div>
+      <div class="page">06</div>
+    </footer>
+  </section>
+</div>
+<script src="../js/fit-slide.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+</html>

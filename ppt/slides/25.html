@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROBLEM SOLVING — 05</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/slide-base.css">
+<link rel="stylesheet" href="../css/week03-shared.css">
+<link rel="stylesheet" href="../css/week09.css">
+<link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+<div id="stage">
+  <section class="slide w3 w9 slide-09-02" id="slide">
+    <div class="bg-glow tl"></div>
+    <div class="bg-glow br"></div>
+
+    <header class="slide-header">
+      <div class="kicker">
+        <span class="dot"></span>
+        <span class="label">INSIGHT</span>
+        <span class="line"></span>
+        <span class="sub">WEEK 02–05</span>
+      </div>
+      <div class="meta">2026. 08. 14</div>
+    </header>
+
+    <div class="hero">
+      <h1 class="title">PROBLEM <span class="hi">SOLVING</span></h1>
+    </div>
+
+    <div class="rule"></div>
+    <p class="goal">구현 중 만난 오류를 원인까지 보고, 코드로 고친 기록</p>
+
+    <div class="cols">
+      <div class="card col">
+        <div class="col-top">
+          <div class="no">05</div>
+          <div class="name">STREAMING GENERATOR</div>
+        </div>
+        <h2>스트림을 딕셔너리처럼 읽어서 깨졌다</h2>
+        <div class="stack">
+          <div class="cell">
+            <div class="lab">PROBLEM</div>
+            <div class="txt"><b>tax_chain.stream(...)</b> 결과를 <b>ai_response["answer"]</b>처럼 접근해 오류가 났다.</div>
+          </div>
+          <div class="cell is-fail">
+            <div class="lab">CAUSE</div>
+            <div class="txt"><b>.stream()</b>은 전체 결과 dict가 아니라, 청크를 차례로 주는 Iterator / Generator다.</div>
+          </div>
+          <div class="cell">
+            <div class="lab">SOLUTION</div>
+            <div class="txt"><b>.pick('answer')</b>로 답변만 남긴 뒤 객체 자체를 반환해 <b>st.write_stream</b>이 그리게 했다.</div>
+          </div>
+          <div class="cell is-end">
+            <div class="lab">INSIGHT</div>
+            <div class="txt"><b>Chain의 반환 타입</b>을 코드에서 확인하는 일이 구현의 핵심이었다.</div>
+          </div>
+        </div>
+        <pre class="code"><code>tax_chain = ({<span class="str">"input"</span>: dictionary_chain} | rag_chain).pick(<span class="str">'answer'</span>)
+ai_response = tax_chain.stream(...)
+<span class="kw">return</span> ai_response          <span class="cm"># not ai_response["answer"]</span></code></pre>
+      </div>
+      <div></div>
+    </div>
+
+    <footer class="slide-footer">
+      <div class="team"></div>
+      <div class="page">09</div>
+    </footer>
+  </section>
+</div>
+<script src="../js/fit-slide.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+</html>

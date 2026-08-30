@@ -1,0 +1,26 @@
+/* Design tokens measured from PPT slide images (1920×1080). */
+:root {
+  --slide-w: 1920px;
+  --slide-h: 1080px;
+
+  --bg: #F7F9FC;
+  --white: #FFFFFF;
+  --text: #111827;
+  --text-title-2: #374151;
+  --text-body: #6B7280;
+  --text-meta: #9CA3AF;
+  --text-page: #C3CAD6;
+  --accent: #3B82F6;
+
+  --margin-x: 132px;
+  --margin-right: 107px;
+
+  --font-en: "Outfit", "Pretendard", -apple-system, sans-serif;
+  --font-kr: "Pretendard", "Outfit", -apple-system, sans-serif;
+
+  --card-radius: 28px;
+  --card-border: #ECEFF4;
+  --card-shadow: 0 2px 4px rgba(17, 24, 39, 0.02), 0 10px 30px rgba(17, 24, 39, 0.045);
+  --soft-blue: #EFF6FF;
+  --chip-bg: #F1F5F9;
+}

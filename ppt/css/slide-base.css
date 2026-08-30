@@ -1,0 +1,197 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #E9EDF3;
+  overflow: hidden;
+  font-family: var(--font-kr);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
+#stage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  position: relative;
+  width: var(--slide-w);
+  height: var(--slide-h);
+  flex: none;
+  transform-origin: center center;
+  background: var(--bg);
+  overflow: hidden;
+  color: var(--text);
+}
+
+/* ── background atmosphere ─────────────────────────── */
+.bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(108px);
+  pointer-events: none;
+}
+
+.bg-glow.tr {
+  width: 984px;
+  height: 984px;
+  top: -384px;
+  right: -240px;
+  background: rgba(59, 130, 246, 0.10);
+}
+
+.bg-glow.bl {
+  width: 744px;
+  height: 744px;
+  bottom: -360px;
+  left: -216px;
+  background: rgba(34, 211, 238, 0.085);
+}
+
+.bg-glow.mid {
+  width: 552px;
+  height: 552px;
+  top: 44%;
+  left: 38%;
+  background: rgba(59, 130, 246, 0.045);
+}
+
+.bg-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(17, 24, 39, 0.055) 1.3px, transparent 1.3px);
+  background-size: 31.2px 31.2px;
+  mask-image: radial-gradient(ellipse 42% 52% at 88% 78%, #000, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse 42% 52% at 88% 78%, #000, transparent 72%);
+  pointer-events: none;
+}
+
+/* ── shared header ─────────────────────────────────── */
+.slide-header {
+  position: absolute;
+  top: 91px;
+  left: var(--margin-x);
+  right: var(--margin-right);
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.kicker .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+
+.kicker .label {
+  font-family: var(--font-en);
+  font-size: 17.4px;
+  font-weight: 600;
+  letter-spacing: 0.168em;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.kicker .sub {
+  font-family: var(--font-en);
+  font-size: 17.4px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--text-meta);
+  line-height: 1;
+  margin-left: 9px;
+}
+
+.kicker .line {
+  width: 20px;
+  height: 1px;
+  background: #D8DEE7;
+  flex: none;
+}
+
+.kicker .line + .sub {
+  margin-left: 0;
+}
+
+/* ── shared cards ──────────────────────────────────── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.card-cap {
+  font-family: var(--font-en);
+  font-size: 14.4px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  color: var(--text-body);
+  line-height: 1;
+}
+
+.badge {
+  font-family: var(--font-en);
+  font-size: 13.2px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  background: var(--soft-blue);
+  border-radius: 999px;
+  padding: 6px 14px;
+  line-height: 1;
+}
+
+.slide-header .meta {
+  font-family: var(--font-kr);
+  font-size: 17.6px;
+  font-weight: 400;
+  color: var(--text-meta);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+/* ── shared footer ─────────────────────────────────── */
+.slide-footer {
+  position: absolute;
+  left: var(--margin-x);
+  right: 135px;
+  top: 985px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slide-footer .team {
+  font-family: var(--font-en);
+  font-size: 16.8px;
+  font-weight: 400;
+  color: var(--text-meta);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.slide-footer .page {
+  font-family: var(--font-en);
+  font-size: 15.6px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--text-page);
+  line-height: 1;
+}

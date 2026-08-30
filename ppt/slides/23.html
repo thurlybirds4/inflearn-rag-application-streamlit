@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROBLEM SOLVING — 01 02</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/slide-base.css">
+<link rel="stylesheet" href="../css/week03-shared.css">
+<link rel="stylesheet" href="../css/week09.css">
+<link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+<div id="stage">
+  <section class="slide w3 w9 slide-09" id="slide">
+    <div class="bg-glow tl"></div>
+    <div class="bg-glow br"></div>
+
+    <header class="slide-header">
+      <div class="kicker">
+        <span class="dot"></span>
+        <span class="label">INSIGHT</span>
+        <span class="line"></span>
+        <span class="sub">WEEK 02–05</span>
+      </div>
+      <div class="meta">2026. 08. 14</div>
+    </header>
+
+    <div class="hero">
+      <h1 class="title">PROBLEM <span class="hi">SOLVING</span></h1>
+    </div>
+
+    <div class="rule"></div>
+    <p class="goal">구현 중 만난 오류를 원인까지 보고, 코드로 고친 기록</p>
+
+    <div class="cols">
+      <div class="card col">
+        <div class="col-top">
+          <div class="no">01</div>
+          <div class="name">LIBRARY VERSION</div>
+        </div>
+        <h2>강의 v0.2와 지금 버전이 달랐다</h2>
+        <div class="stack">
+          <div class="cell">
+            <div class="lab">PROBLEM</div>
+            <div class="txt">강의는 LangChain <b>v0.2</b>, 현재는 <b>v1.3x</b>. 코드를 그대로 쓰면 호환이 깨질 수 있었다.</div>
+          </div>
+          <div class="cell is-fail">
+            <div class="lab">CAUSE</div>
+            <div class="txt">프로젝트 코드가 강의 당시 버전 기준이라, 최신 패키지를 그대로 깔면 의존성이 어긋날 수 있었다.</div>
+          </div>
+          <div class="cell">
+            <div class="lab">SOLUTION</div>
+            <div class="txt">제공된 <b>requirements.txt</b>로 버전을 맞추고, 쓰는 패키지 버전을 명시했다.</div>
+          </div>
+          <div class="cell is-end">
+            <div class="lab">INSIGHT</div>
+            <div class="txt">최신 라이브러리보다 <b>코드와 버전이 맞는지</b>가 중요했다.</div>
+          </div>
+        </div>
+        <pre class="code"><code>%pip install -r requirements.txt
+%pip install langchain-google-genai==<span class="nm">2.0.1</span> -q</code></pre>
+      </div>
+
+      <div class="card col">
+        <div class="col-top">
+          <div class="no">02</div>
+          <div class="name">EMBEDDING MODEL NAME</div>
+        </div>
+        <h2>문서의 모델명을 그대로 쓰면 깨졌다</h2>
+        <div class="stack">
+          <div class="cell">
+            <div class="lab">PROBLEM</div>
+            <div class="txt">공식 문서의 <b>gemini-embedding-001</b>을 넣었더니 model name format 오류가 났다.</div>
+          </div>
+          <div class="cell is-fail">
+            <div class="lab">CAUSE</div>
+            <div class="txt">문서의 이름만 보고 썼고, 실제 API가 요구하는 <b>models/</b> 접두사를 확인하지 않았다.</div>
+          </div>
+          <div class="cell">
+            <div class="lab">SOLUTION</div>
+            <div class="txt">내 API 키로 쓸 수 있는 모델을 조회해 <b>models/</b> 접두사가 필요함을 확인했다.</div>
+          </div>
+          <div class="cell is-end">
+            <div class="lab">INSIGHT</div>
+            <div class="txt">코드를 고치기 전에 <b>지금 쓸 수 있는 모델과 스펙</b>을 확인하는 디버깅이 먼저였다.</div>
+          </div>
+        </div>
+        <pre class="code"><code><span class="kw">for</span> m <span class="kw">in</span> genai.list_models():
+    <span class="kw">if</span> <span class="str">'embedContent'</span> <span class="kw">in</span> m.supported_generation_methods:
+        print(m.name)</code></pre>
+      </div>
+    </div>
+
+    <footer class="slide-footer">
+      <div class="team"></div>
+      <div class="page">09</div>
+    </footer>
+  </section>
+</div>
+<script src="../js/fit-slide.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+</html>
