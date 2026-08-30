@@ -4,6 +4,8 @@
 
 ## 슬라이드 열기
 
+온라인: https://thurlybirds4.github.io/inflearn-rag-application-streamlit/
+
 `slides/01.html`부터 보거나 `index.html`에서 고르면 됩니다.
 
 화면 **왼쪽**을 클릭하면 이전, **오른쪽**을 클릭하면 다음 장으로 넘어갑니다.
