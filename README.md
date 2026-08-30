@@ -1,79 +1,117 @@
 # Inflearn LLM PPT
 
-인프런 LLM 애플리케이션 과정 발표용 HTML 슬라이드입니다.
+인프런 LLM 애플리케이션 과정의 발표를 위한 HTML 슬라이드입니다.
 
 ## 슬라이드 열기
+**온라인:**
+https://thurlybirds4.github.io/inflearn-rag-application-streamlit/01.html
 
-온라인: https://thurlybirds4.github.io/inflearn-rag-application-streamlit/01.html
+## 깃허브 링크
+https://github.com/thurlybirds4/inflearn-rag-application-streamlit
 
 ---
 
 # Inflearn Streamlit Project
 
-## Overview
+## 개요 (Overview)
 
-This repository contains a project that utilizes LangChain and Streamlit to build a Retrieval Augmented Generation (RAG) application. The primary focus of this application is to provide insights and answers based on the South Korean Income Tax Law (소득세법). By leveraging advanced NLP techniques, this application enhances its responses using a combination of chat history and few-shot learning templates.
+이 저장소는 **LangChain과 Streamlit을 활용하여 RAG(Retrieval Augmented Generation, 검색 증강 생성) 애플리케이션을 구축한 프로젝트**입니다.
 
-## Features
+이 애플리케이션은 **대한민국 소득세법(소득세법)**을 기반으로 사용자의 질문에 대한 정보와 답변을 제공하는 것을 주요 목적으로 합니다.
 
-- **LangChain Integration**: Utilizes LangChain to manage and interact with language models effectively.
-- **Streamlit Interface**: A user-friendly web interface created with Streamlit for seamless interaction.
-- **Retrieval Augmented Generation (RAG)**: Combines retrieval-based techniques with generative models to produce accurate and context-aware answers.
-- **Knowledge Base**: Focuses on the South Korean Income Tax Law (소득세법) as the primary knowledge base.
-- **Chat History**: Maintains a history of user interactions to provide contextually relevant answers.
-- **Few-Shot Learning Templates**: Enhances the model's responses by using predefined templates for better accuracy and consistency.
+또한 **채팅 기록(Chat History)**과 **Few-Shot Learning 템플릿**을 함께 활용하여, 사용자의 질문에 대해 보다 정확하고 문맥에 맞는 답변을 생성하도록 구성했습니다.
 
-## Installation
+## 주요 기능 (Features)
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/jasonkang14/inflearn-streamlit.git
-    cd inflearn-streamlit
-    ```
+* **LangChain 연동 (LangChain Integration)**
+  LangChain을 활용하여 LLM(대규모 언어 모델)을 효율적으로 관리하고 상호작용할 수 있도록 구성했습니다.
 
-2. Create and activate a virtual environment:
-    ```sh
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
+* **Streamlit 인터페이스 (Streamlit Interface)**
+  Streamlit을 이용하여 사용자가 쉽게 사용할 수 있는 웹 기반 인터페이스를 제공합니다.
 
-3. Install the required dependencies:
-    ```sh
-    pip install -r requirements.txt
-    ```
+* **검색 증강 생성 (Retrieval Augmented Generation, RAG)**
+  관련 정보를 먼저 검색한 후 검색된 내용을 LLM에 제공하여, 보다 정확하고 문맥에 맞는 답변을 생성합니다.
 
-## Usage
+* **지식 베이스 (Knowledge Base)**
+  대한민국 **소득세법**을 주요 지식 데이터로 활용합니다.
 
-1. Run the Streamlit application:
-    ```sh
-    streamlit run chat.py
-    ```
+* **대화 기록 (Chat History)**
+  이전 대화 내용을 유지하여 사용자의 후속 질문에 대해서도 문맥을 고려한 답변을 제공합니다.
 
-2. Open your web browser and navigate to the displayed local URL to interact with the application.
+* **Few-Shot Learning 템플릿**
+  미리 정의된 예시 및 템플릿을 활용하여 모델의 답변 품질과 일관성을 향상시킵니다.
 
-## Project Structure
+## 설치 방법 (Installation)
 
-- `chat.py`: Main application script that runs the Streamlit interface.
-- `llm.py`: Contains utility functions for handling the knowledge base and model interactions.
-- `config.py`: File with few-shot learning templates used to generate answers.
+### 1. 저장소 복제
 
-## How It Works
+```sh
+git clone https://github.com/jasonkang14/inflearn-streamlit.git
+cd inflearn-streamlit
+```
 
-1. **Data Retrieval**: The application retrieves relevant sections of the South Korean Income Tax Law based on user queries.
-2. **Contextual Processing**: Utilizes chat history to maintain context across multiple interactions.
-3. **Template-Based Generation**: Applies few-shot learning templates to enhance the accuracy and relevance of the generated answers.
-4. **User Interface**: Provides an intuitive web interface through Streamlit for users to interact with the application seamlessly.
+### 2. 가상환경 생성 및 활성화
 
-## Contributing
+```sh
+python3 -m venv venv
+source venv/bin/activate
+```
 
-Contributions are welcome! Please feel free to submit a Pull Request or open an Issue to discuss improvements, bug fixes, or new features.
+### 3. 필요한 패키지 설치
 
-## Acknowledgments
+```sh
+pip install -r requirements.txt
+```
 
-- [LangChain](https://langchain.com/)
-- [Streamlit](https://streamlit.io/)
-- All contributors and users of the project.
+## 실행 방법 (Usage)
 
----
+### 1. Streamlit 애플리케이션 실행
 
-Feel free to modify and enhance this README to better fit your project's specifics and any additional information you may want to provide.
+```sh
+streamlit run chat.py
+```
+
+### 2. 웹 브라우저 접속
+
+실행 후 터미널에 표시되는 **로컬 URL(Local URL)**을 웹 브라우저에서 열어 애플리케이션을 사용할 수 있습니다.
+
+## 프로젝트 구조 (Project Structure)
+
+* `chat.py`
+  Streamlit 기반의 사용자 인터페이스를 실행하는 **메인 애플리케이션 파일**입니다.
+
+* `llm.py`
+  **지식 베이스와 LLM의 상호작용을 처리하는 기능**을 포함하고 있습니다.
+
+* `config.py`
+  답변 생성에 사용되는 **Few-Shot Learning 템플릿**이 정의되어 있는 파일입니다.
+
+## 동작 방식 (How It Works)
+
+### 1. 데이터 검색 (Data Retrieval)
+
+사용자의 질문을 분석하고, 소득세법 지식 베이스에서 질문과 관련성이 높은 내용을 검색합니다.
+
+### 2. 문맥 처리 (Contextual Processing)
+
+이전 대화 기록을 함께 활용하여 현재 질문의 맥락을 파악하고, 연속적인 대화가 가능하도록 합니다.
+
+### 3. 템플릿 기반 답변 생성 (Template-Based Generation)
+
+Few-Shot Learning 템플릿을 활용하여 LLM이 보다 정확하고 관련성 높은 답변을 생성할 수 있도록 합니다.
+
+### 4. 사용자 인터페이스 (User Interface)
+
+Streamlit을 기반으로 직관적인 웹 인터페이스를 제공하여 사용자가 LLM 애플리케이션과 쉽게 상호작용할 수 있도록 구성했습니다.
+
+## 기여 (Contributing)
+
+프로젝트에 대한 기여를 환영합니다.
+
+개선 사항이나 버그 수정이 필요한 경우 **Pull Request**를 제출하거나 **Issue**를 생성하여 의견을 공유할 수 있습니다.
+
+## 참고 및 감사 (Acknowledgments)
+
+* **LangChain**
+* **Streamlit**
+* 프로젝트에 기여해 주신 모든 개발자와 사용자
