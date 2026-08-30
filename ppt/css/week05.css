@@ -377,7 +377,7 @@
   top: 456px;
   left: 133px;
   width: 1653px;
-  height: 360px;
+  height: 508px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
@@ -398,36 +398,3 @@
   line-height: 1.5;
 }
 
-.slide-07-04 .note {
-  position: absolute;
-  top: 832px;
-  left: 133px;
-  width: 1653px;
-  height: 132px;
-  padding: 20px 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-}
-
-.slide-07-04 .note .card-cap { margin-bottom: 0; }
-
-.slide-07-04 .note p {
-  margin: 0;
-  font-size: 15.5px;
-  line-height: 1.5;
-  color: var(--text);
-  letter-spacing: -0.02em;
-}
-
-.slide-07-04 .need {
-  display: inline-block;
-  margin-left: 6px;
-  padding: 2px 9px;
-  border-radius: 999px;
-  background: #FEF0D8;
-  color: #F1823D;
-  font-size: 13px;
-  font-weight: 700;
-}
