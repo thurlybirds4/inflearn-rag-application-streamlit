@@ -1,6 +1,6 @@
 (function () {
   var slides = [
-    "01.html", "02.html", "03.html", "04.html", "05.html",
+    "01.html", "02.html", "03.html", "04.html",
     "06.html", "07.html", "08.html", "09.html", "10.html",
     "11.html", "12.html", "13.html", "14.html", "15.html",
     "16.html", "17.html", "18.html", "19.html", "20.html",
