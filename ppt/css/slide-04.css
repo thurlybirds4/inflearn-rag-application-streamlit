@@ -77,6 +77,8 @@
   letter-spacing: -0.02em;
   white-space: nowrap;
   line-height: 32px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .slide-04 .cursor-pointer {
