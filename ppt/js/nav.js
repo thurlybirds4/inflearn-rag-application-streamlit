@@ -11,42 +11,17 @@
   var i = slides.indexOf(file);
   if (i < 0) return;
 
-  var hint = document.createElement("div");
-  hint.id = "nav-hint";
-  hint.innerHTML =
-    '<svg class="nav-left" viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
-      '<path d="M14.5 6.5L9 12l5.5 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>' +
-    "</svg>" +
-    '<svg class="nav-right" viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
-      '<path d="M9.5 6.5L15 12l-5.5 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>' +
-    "</svg>";
-  document.body.appendChild(hint);
+  var slide = document.getElementById("slide");
+  if (!slide) return;
 
-  var side = null;
-
-  function update(e) {
-    var x = e.clientX / window.innerWidth;
-    var next = x <= 0.3 ? "left" : x >= 0.7 ? "right" : null;
-    if (next === "left" && i === 0) next = null;
-    if (next === "right" && i === slides.length - 1) next = null;
-    side = next;
-    hint.className = side ? "is-" + side : "is-off";
-    hint.style.transform =
-      "translate(" + (e.clientX + (side === "left" ? -52 : 20)) + "px," +
-      (e.clientY - 22) + "px)";
-    document.body.style.cursor = side ? "pointer" : "default";
-  }
-
-  document.addEventListener("mousemove", update);
   var moving = false;
 
   function go(href) {
-    if (moving) return;
+    if (!href || moving) return;
     if ((file === "06.html" && href === "07.html") ||
         (file === "11.html" && href === "12.html") ||
         (file === "17.html" && href === "18.html")) {
-      var slide = document.getElementById("slide");
-      if (slide && !slide.classList.contains("is-leaving")) {
+      if (!slide.classList.contains("is-leaving")) {
         moving = true;
         if (file === "11.html") {
           var board = slide.querySelector(".board");
@@ -67,9 +42,42 @@
     location.href = href;
   }
 
-  document.addEventListener("click", function (e) {
-    if (e.target.closest("a")) return;
-    if (side === "right") go(slides[i + 1]);
-    if (side === "left") go(slides[i - 1]);
-  });
+  function makeBtn(cls, label, svgPath) {
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "nav-btn " + cls;
+    btn.setAttribute("aria-label", label);
+    btn.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+        '<path d="' + svgPath + '" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>' +
+      "</svg>";
+    return btn;
+  }
+
+  if (i > 0) {
+    var prev = makeBtn(
+      "nav-prev",
+      "이전 슬라이드",
+      "M14.5 6.5L9 12l5.5 5.5"
+    );
+    prev.addEventListener("click", function (e) {
+      e.stopPropagation();
+      go(slides[i - 1]);
+    });
+    slide.appendChild(prev);
+  }
+
+  if (i < slides.length - 1) {
+    var next = makeBtn(
+      "nav-next",
+      "다음 슬라이드",
+      "M9.5 6.5L15 12l-5.5 5.5"
+    );
+    if (i === 0) next.classList.add("is-cover");
+    next.addEventListener("click", function (e) {
+      e.stopPropagation();
+      go(slides[i + 1]);
+    });
+    slide.appendChild(next);
+  }
 })();
